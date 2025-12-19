@@ -1,4 +1,4 @@
-package com.practicum.playlistproj.ui.theme
+package com.prcom.practicum.playlistproj.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
