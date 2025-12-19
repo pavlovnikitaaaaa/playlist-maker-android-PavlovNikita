@@ -1,4 +1,4 @@
-package com.prcom.prcom.practicum.playlistproj.ui.theme
+package com.prcom.practicum.playlistproj.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

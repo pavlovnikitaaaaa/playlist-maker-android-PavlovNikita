@@ -1,4 +1,4 @@
-package com.prcom.prcom.practicum.playlistproj.screens
+package com.prcom.practicum.playlistproj.ui.search
 
 import android.content.Intent
 import androidx.compose.foundation.background
@@ -39,9 +39,9 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.prcom.prcom.practicum.playlistproj.MainActivity
-import com.prcom.prcom.practicum.playlistproj.R
-import com.prcom.prcom.practicum.playlistproj.utils.TopAppButtonBar
+import com.prcom.practicum.playlistproj.ui.activity.MainActivity
+import com.prcom.practicum.playlistproj.R
+import com.prcom.practicum.playlistproj.ui.utils.TopAppButtonBar
 
 @Composable
 fun SearchScreen(onBackClick: () -> Unit) {
@@ -134,7 +134,6 @@ fun CustomSearchField(
                             modifier = Modifier.fillMaxSize(),
                             contentAlignment = Alignment.CenterStart
                         ) {
-                            // Placeholder
                             if (value.isEmpty()) {
                                 Text(
                                     text = placeholder,

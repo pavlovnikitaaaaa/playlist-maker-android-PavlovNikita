@@ -1,4 +1,4 @@
-package com.prcom.practicum.playlistproj.utils
+package com.prcom.practicum.playlistproj.ui.utils
 
 import android.content.Context
 import androidx.compose.foundation.clickable

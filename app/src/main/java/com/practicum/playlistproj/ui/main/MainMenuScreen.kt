@@ -1,4 +1,4 @@
-package com.prcom.prcom.practicum.playlistproj.screens
+package com.prcom.practicum.playlistproj.ui.main
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -20,9 +20,9 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.prcom.prcom.practicum.playlistproj.R
-import com.prcom.prcom.practicum.playlistproj.utils.ButtonSample
-import com.prcom.prcom.practicum.playlistproj.utils.IconType
+import com.prcom.practicum.playlistproj.R
+import com.prcom.practicum.playlistproj.ui.utils.ButtonSample
+import com.prcom.practicum.playlistproj.ui.utils.IconType
 
 @Composable
 fun MenuScreen(
