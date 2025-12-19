@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name" translatable="false">PlaylistMaker</string>
+    <string name="search">Search</string>
+    <string name="playlists">Playlists</string>
+    <string name="favourites">Favourites</string>
+    <string name="settings">Settings</string>
+    <string name="arrow_forward">Arrow Forward</string>
+    <string name="arrow_back">Arrow back</string>
+    <string name="dark_theme">Dark theme</string>
+    <string name="share_app">Share app</string>
+    <string name="message_to_support">Message to support</string>
+    <string name="user_agreement">User agreement</string>
+    <string name="dev_email" translatable="false">den20011709@gmail.com</string>
+    <string name="email_subject">Message to the developers of the PlaylistMaker app</string>
+    <string name="email_text">Thanks to the developers for a great app!</string>
+    <string name="agreement_url" translatable="false">https://yandex.ru/legal/practicum_offer/ru/</string>
 </resources>

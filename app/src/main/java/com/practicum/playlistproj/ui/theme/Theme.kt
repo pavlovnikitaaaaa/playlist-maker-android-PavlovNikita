@@ -1,4 +1,4 @@
-package com.practicum.playlistproj.ui.theme
+package com.prcom.practicum.playlistproj.ui.theme
 
 import android.app.Activity
 import android.os.Build
