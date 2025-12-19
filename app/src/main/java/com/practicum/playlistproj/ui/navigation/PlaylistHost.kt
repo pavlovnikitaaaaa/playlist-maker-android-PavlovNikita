@@ -1,13 +1,13 @@
-package com.prcom.practicum.playlistproj.navigation
+package com.prcom.practicum.playlistproj.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.prcom.practicum.playlistproj.screens.MenuScreen
-import com.prcom.practicum.playlistproj.screens.SearchScreen
-import com.prcom.practicum.playlistproj.screens.SettingsScreen
+import com.practicum.playlistmaker.ui.main.MenuScreen
+import com.practicum.playlistmaker.ui.search.SearchScreen
+import com.practicum.playlistmaker.ui.settings.SettingsScreen
 
 enum class Screen(val route: String) {
     MAIN_MENU("main_menu"),

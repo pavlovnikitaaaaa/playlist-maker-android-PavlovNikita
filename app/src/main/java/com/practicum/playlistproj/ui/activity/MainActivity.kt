@@ -1,9 +1,9 @@
-package com.prcom.practicum.playlistproj
+package com.prcom.practicum.playlistproj.ui.activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.prcom.practicum.playlistproj.navigation.PlaylistHost
+import com.prcom.practicum.playlistproj.ui.navigation.PlaylistHost
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
