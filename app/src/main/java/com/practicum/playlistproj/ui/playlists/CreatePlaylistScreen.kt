@@ -48,12 +48,14 @@ fun CreatePlaylistScreen(
     var coverUri by remember { mutableStateOf<Uri?>(null) }
 
     val pickImageLauncher = rememberLauncherForActivityResult(
-        contract = ActivityResultContracts.GetContent()
+        contract = ActivityResultContracts.OpenDocument()
     ) { uri ->
         if (uri != null) {
-            context.contentResolver.takePersistableUriPermission(
-                uri, Intent.FLAG_GRANT_READ_URI_PERMISSION
-            )
+            runCatching {
+                context.contentResolver.takePersistableUriPermission(
+                    uri, Intent.FLAG_GRANT_READ_URI_PERMISSION
+                )
+            }
             coverUri = uri
         }
     }
@@ -90,7 +92,7 @@ fun CreatePlaylistScreen(
                     .size(180.dp)
                     .clip(RoundedCornerShape(12.dp))
                     .background(Color(0xFFF2F2F2))
-                    .clickable { pickImageLauncher.launch("image/*") },
+                    .clickable { pickImageLauncher.launch(arrayOf("image/*")) },
                 contentAlignment = Alignment.Center
             ) {
                 if (coverUri != null) {

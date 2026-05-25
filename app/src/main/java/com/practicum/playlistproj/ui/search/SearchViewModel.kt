@@ -13,7 +13,6 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import java.io.IOException
 
 class SearchViewModel(
     private val tracksRepository: TracksRepository
@@ -27,20 +26,27 @@ class SearchViewModel(
         initialValue = emptyList()
     )
 
+    private var lastQuery: String = ""
+
     fun search(whatSearch: String) {
         if (whatSearch.isBlank()) {
             _searchScreenState.update { SearchState.Initial }
             return
         }
+        lastQuery = whatSearch
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 _searchScreenState.update { SearchState.Searching }
                 val list = tracksRepository.searchTracks(expression = whatSearch)
                 _searchScreenState.update { SearchState.Success(list = list) }
-            } catch (e: IOException) {
+            } catch (e: Exception) {
                 _searchScreenState.update { SearchState.Fail(e.message.toString()) }
             }
         }
+    }
+
+    fun repeatSearch() {
+        if (lastQuery.isNotBlank()) search(lastQuery)
     }
 
     fun onTrackClicked(track: Track) {

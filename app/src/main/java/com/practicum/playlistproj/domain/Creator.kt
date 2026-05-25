@@ -2,7 +2,6 @@ package com.prcom.practicum.playlistproj.domain
 
 import android.content.Context
 import androidx.room.Room
-import com.prcom.practicum.playlistproj.creator.Storage
 import com.prcom.practicum.playlistproj.data.db.AppDatabase
 import com.prcom.practicum.playlistproj.data.db.FavoritesRepositoryImpl
 import com.prcom.practicum.playlistproj.data.db.PlaylistsRepositoryImpl
@@ -25,7 +24,7 @@ object Creator {
 
     fun getTracksRepository(): TracksRepository {
         return TracksRepositoryImpl(
-            networkClient = RetrofitNetworkClient(Storage()),
+            networkClient = RetrofitNetworkClient(),
             searchHistory = SearchHistory(appContext)
         )
     }

@@ -22,4 +22,5 @@
     <string name="title_activity_navigation">NavigationActivity</string>
     <string name="title_empty">Ничего не нашлось</string>
     <string name="no_internet">Проблема со связью</string>
+    <string name="update">Обновить</string>
 </resources>

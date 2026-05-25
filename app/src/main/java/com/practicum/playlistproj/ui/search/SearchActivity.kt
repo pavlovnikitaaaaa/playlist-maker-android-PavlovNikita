@@ -206,6 +206,13 @@ fun SearchScreen(
                             fontSize = 16.sp,
                             color = Color(0xFF7A7C81)
                         )
+                        Spacer(modifier = Modifier.height(24.dp))
+                        Button(
+                            onClick = { viewModel.repeatSearch() },
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF3772E7))
+                        ) {
+                            Text(stringResource(R.string.update), color = Color.White)
+                        }
                     }
                 }
             }

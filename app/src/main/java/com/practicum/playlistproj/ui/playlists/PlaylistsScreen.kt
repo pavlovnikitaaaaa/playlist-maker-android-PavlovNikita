@@ -8,7 +8,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -23,9 +22,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import coil.compose.AsyncImage
+import com.prcom.practicum.playlistproj.R
 import com.prcom.practicum.playlistproj.domain.Playlist
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -100,19 +103,18 @@ private fun PlaylistRow(playlist: Playlist, onClick: () -> Unit) {
             .clickable(onClick = onClick),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Box(
+        AsyncImage(
+            model = playlist.coverPath,
+            contentDescription = playlist.name,
+            placeholder = painterResource(id = R.drawable.ic_music),
+            error = painterResource(id = R.drawable.ic_music),
+            fallback = painterResource(id = R.drawable.ic_music),
+            contentScale = ContentScale.Crop,
             modifier = Modifier
                 .size(56.dp)
                 .clip(RoundedCornerShape(8.dp))
-                .background(Color(0xFFEAEAEA)),
-            contentAlignment = Alignment.Center
-        ) {
-            Icon(
-                imageVector = Icons.Default.PlayArrow,
-                contentDescription = null,
-                tint = Color(0xFFAEAFB4)
-            )
-        }
+                .background(Color(0xFFEAEAEA))
+        )
         Spacer(modifier = Modifier.width(12.dp))
         Column {
             Text(
